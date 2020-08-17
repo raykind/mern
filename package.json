@@ -1,0 +1,33 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "description": "MERN Stack",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raykind/mern.git"
+  },
+  "keywords": [
+    "mern",
+    "react"
+  ],
+  "author": "Lev Ufimtsev <raykind@list.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raykind/mern/issues"
+  },
+  "homepage": "https://github.com/raykind/mern#readme",
+  "dependencies": {
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
+}
