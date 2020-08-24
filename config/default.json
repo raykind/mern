@@ -1,4 +1,5 @@
 {
   "port": 5000,
+  "jwtSecret": "raykind",
   "mongoUri": "mongodb+srv://raykind:2171007Uf@cluster0.ifmxe.azure.mongodb.net/app?retryWrites=true&w=majority"
 }
