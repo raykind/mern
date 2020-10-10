@@ -1,5 +1,5 @@
 const {Router}  = require('express')
-const User = require('../models/user')
+const User = require('../models/User')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const config = require('config')
@@ -18,7 +18,7 @@ router.post(
     try {
       const errors = validationResult(req)
 
-      if (errors.isEmpty()) {
+      if (!errors.isEmpty()) {
         return res.status(400).json({
           errors: errors.array(),
           message: 'Некорректные данные при регистрации'
@@ -56,7 +56,7 @@ router.post(
     try {
       const errors = validationResult(req)
 
-      if (errors.isEmpty()) {
+      if (!errors.isEmpty()) {
         return res.status(400).json({
           errors: errors.array(),
           message: 'Некорректные данные при входе в систему'
@@ -71,7 +71,7 @@ router.post(
         return res.status(400).json({message: 'Пользователь не найден'})
       }
 
-      const isPasswordsMatch = bcrypt.compare(password, user.password)
+      const isPasswordsMatch = await bcrypt.compare(password, user.password)
 
       if (!isPasswordsMatch) {
         return res.status(400).json({message: 'Неверный пароль, попробуйте снова'})
